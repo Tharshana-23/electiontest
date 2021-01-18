@@ -1,0 +1,115 @@
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>
+	
+	body{
+	
+	margin-top:1em;
+	background-color: hsla(89, 43%, 51%, 0.3);
+	
+	
+	}
+	
+	.container{
+	background-color: hsl(89, 43%, 51%);
+	}
+	
+	
+</style>
+
+</head>
+<body >
+
+
+<div class="container">
+
+<div style="text-align: center">
+<h2><strong style="font-size: 50px">Register</strong></h2>
+<br>
+</div>
+<div class="jambotron">
+
+<div id="right">
+<form action="#" th:action="@{/update}" th:object="${voter}" method="post">
+<div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="fistName">First name</label>
+                <input type="text" class="form-control" th:field="*{fistName}" id="fistName" value="${voter.fistName}" >
+                <div style="margin-top: 10px" class="alert alert-danger"
+							role="alert" th:if="${#fields.hasErrors('fistName')}"
+							th:errors="*{fistName}"></div>
+        
+              </div>
+              <br>
+              <div class="col-md-4 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" th:field="*{lastName}"  id="lastName" value="${voter.lastName}" >
+                <div style="margin-top: 10px" class="alert alert-danger"
+							role="alert" th:if="${#fields.hasErrors('lastName')}"
+							th:errors="*{lastName}"></div>
+              </div>
+            </div>
+              <br>
+              <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="text">NIC</label>
+                <input type="text" class="form-control" th:field="*{nic}" id="nic" value="${voter.nic}" >
+                <div style="margin-top: 10px" class="alert alert-danger"
+							role="alert" th:if="${#fields.hasErrors('nic')}"
+							th:errors="*{nic}"></div>
+              </div>
+            
+            <br>
+            
+              <div class="col-md-4 mb-3">
+                <label for="contactNo">Mobile No</label>
+                <input type="text" class="form-control" th:field="*{contactNo}" id="contactNo" value="${voter.contactNo}" placeholder="(xxx-xxxxxx)">
+                <div style="margin-top: 10px" class="alert alert-danger"
+							role="alert" th:if="${#fields.hasErrors('contactNo')}"
+							th:errors="*{contactNo}"></div>
+              </div>
+            </div>
+             
+            
+             
+              
+             
+            
+            <button class="btn btn-primary" type="submit">Save</button>
+            
+            
+</form> 
+
+	
+             
+
+            <a th:href="@{/}"><button class="btn btn-info">Back</button></a>
+            
+
+<div th:if="${message}"> 
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading"></h4>
+  <h4 th:text="${message}"></h4>
+  
+
+</div> 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

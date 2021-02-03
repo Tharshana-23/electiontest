@@ -6,17 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-
-public class Candidate {
+public class User {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	private String name;
 	
-	private String party;
-	
-	private int voteCount;
+	private String password;
 
 	public int getId() {
 		return id;
@@ -34,20 +32,12 @@ public class Candidate {
 		this.name = name;
 	}
 
-	public String getParty() {
-		return party;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setParty(String party) {
-		this.party = party;
-	}
-
-	public int getVoteCount() {
-		return voteCount;
-	}
-
-	public void setVoteCount(int voteCount) {
-		this.voteCount = voteCount;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

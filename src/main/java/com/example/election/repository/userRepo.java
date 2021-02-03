@@ -3,11 +3,11 @@ package com.example.election.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.election.model.Candidate;
+import com.example.election.model.User;
 
 @Repository
-public interface CandidateRepo extends JpaRepository<Candidate, Integer> {
+public interface userRepo extends JpaRepository<User, Integer> {
 	
-	Candidate findById(int id);
+	User findByNameAndPassword(String name, String password);
 
 }
